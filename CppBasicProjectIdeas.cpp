@@ -1,20 +1,65 @@
-// CppBasicProjectIdeas.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
+
+
+#include"CppBasicProjectIdeas.h"
 
 #include <iostream>
+#include<string>
+#include<sstream>
+#include"TextRPGProject.cpp"
+TextRPGProject* Mode;
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    MyProjectVar myProjectVar;
+    myProjectVar.Applcation = true;
+    myProjectVar.WhichProject = Input_Numpad0;
+
+    while (myProjectVar.Applcation)
+    {
+        switch (myProjectVar.WhichProject)
+        {
+        case VK_NUM0:
+        {//Menu
+
+            // need print selection to all project
+            
+
+            std::cout << "Input Needed Pressed Numpad 1" << std::endl;
+            std::cin >> myProjectVar.Selection_P;
+            if (myProjectVar.Selection_P == 1)
+            {
+                myProjectVar.WhichProject = VK_NUM1;
+            }
+            else
+            {
+                myProjectVar.WhichProject = VK_NUM0;
+            }
+            system("cls");
+            //myProjectVar.Applcation = false;
+            break;
+        }
+        case VK_NUM1:
+        {// TextRPGProject
+            
+           
+            Mode->GameUpdateTextRPG();
+            
+            break;
+        }
+
+        default:
+        {
+            // Close applation from any location
+            break;
+        }
+        }
+       
+
+    }
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

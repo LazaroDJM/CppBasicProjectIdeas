@@ -128,6 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CppBasicProjectIdeas.cpp" />
+    <ClCompile Include="TextRPGProject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CppBasicProjectIdeas.h" />
+    <ClInclude Include="TextRPGProject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
