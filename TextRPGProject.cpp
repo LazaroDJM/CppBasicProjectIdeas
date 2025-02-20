@@ -1,9 +1,7 @@
 
 #include "TextRPGProject.h"
 
-#include <iostream>
 
-using namespace std;
 
 void TextRPGProject::GameUpdateTextRPG()
 {

@@ -2,12 +2,13 @@
 
 
 #include"CppBasicProjectIdeas.h"
-
+#include"TextRPGProject.cpp"
 #include <iostream>
 #include<string>
 #include<sstream>
-#include"TextRPGProject.cpp"
-TextRPGProject* Mode;
+
+TextRPGProject Mode;
+
 
 using namespace std;
 
@@ -45,7 +46,7 @@ int main()
         {// TextRPGProject
             
            
-            Mode->GameUpdateTextRPG();
+            Mode.GameUpdateTextRPG();
             
             break;
         }
