@@ -38,6 +38,13 @@
 #define VK_NUM8 0X38
 #define VK_NUM9 0X39
 
+// Arrow Keys
+
+#define VK_Left  0x25
+#define VK_UP    0x26
+#define VK_Right 0x27
+#define VK_Down  0x28
+
 enum InputID
 {
 	Input_Undefined,
@@ -90,10 +97,10 @@ enum InputID
 	Input_Z,
 	// VK
 
-	Input_ArrowUp,
-	Input_ArrowDown,
-	Input_ArrowLeft,
-	Input_ArrowRight,
+	Input_ArrowUp = 0x26, // 38
+	Input_ArrowDown = 0x28, // 40
+	Input_ArrowLeft = 0x25, //37
+	Input_ArrowRight = 0x27, // 39
 
 	Input_F1,
 	Input_F2,
@@ -127,3 +134,5 @@ enum InputID
 
 
 };
+
+

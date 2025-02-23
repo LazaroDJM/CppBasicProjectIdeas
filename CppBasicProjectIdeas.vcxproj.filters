@@ -21,6 +21,9 @@
     <ClCompile Include="TextRPGProject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TypeDef.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CppBasicProjectIdeas.h">

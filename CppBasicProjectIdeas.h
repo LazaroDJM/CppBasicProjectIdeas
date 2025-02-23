@@ -16,5 +16,7 @@ struct MyProjectVar
 	int WhichProject = 0;
 	int Selection_P = 0;
 	string MainMenuName = { "CPP Projects" };
+	int startpoint = 0;
+
 };
 

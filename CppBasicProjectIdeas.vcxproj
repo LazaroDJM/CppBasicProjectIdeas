@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="CppBasicProjectIdeas.cpp" />
     <ClCompile Include="TextRPGProject.cpp" />
+    <ClCompile Include="TypeDef.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CppBasicProjectIdeas.h" />
