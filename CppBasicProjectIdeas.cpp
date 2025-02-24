@@ -36,6 +36,8 @@ static MyProjectVar MainMenuDisplay(MyProjectVar myProjectvar, HANDLE hConsole_C
     {// seletion project
        
         SetConsoleTextAttribute(hConsole_C,12);
+        myProjectvar.WhichProject = VK_NUM1;
+        myProjectvar.PlayerEnterSelected = true;
     }
     else if (myProjectvar.startpoint == 0)
     {
@@ -68,39 +70,31 @@ static MyProjectVar MainMenuDisplay(MyProjectVar myProjectvar, HANDLE hConsole_C
     cout << " " << endl;
 
     SetConsoleTextAttribute(hConsole_C, 15);
-    system("pause");
-
-    if (myProjectvar.Selection_P == 1)
+    if (myProjectvar.PlayerEnterSelected == NULL)
     {
-        myProjectvar.WhichProject = VK_NUM1;
-    }
-    else
-    {
-        myProjectvar.WhichProject = VK_NUM0;
-    }
+        //system("pause");
 
-
-    myProjectvar.Selection_P = _getch();
-    if (myProjectvar.Selection_P == 224)
-    {
         myProjectvar.Selection_P = _getch();
-    }
-    if (myProjectvar.Selection_P == 80)
-    {
-        if (myProjectvar.startpoint == 0)
+        if (myProjectvar.Selection_P == 224)
         {
-            myProjectvar.startpoint = 1;
+            myProjectvar.Selection_P = _getch();
         }
-    }
-    else if (myProjectvar.Selection_P == 72)
-    {
-        if (myProjectvar.startpoint == 1)
+        if (myProjectvar.Selection_P == 80)
         {
-            myProjectvar.startpoint = 0;
+            if (myProjectvar.startpoint == 0)
+            {
+                myProjectvar.startpoint = 1;
+            }
         }
+        else if (myProjectvar.Selection_P == 72)
+        {
+            if (myProjectvar.startpoint == 1)
+            {
+                myProjectvar.startpoint = 0;
+            }
+        }
+        myProjectvar.PlayerEnterSelected = false;
     }
-  
-   
     
    
     return myProjectvar;
@@ -136,7 +130,7 @@ int main()
         {// TextRPGProject
             
            
-            Mode.GameUpdateTextRPG();
+            Mode.GameUpdateTextRPG(hConsole);
             
             break;
         }

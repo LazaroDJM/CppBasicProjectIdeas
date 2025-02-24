@@ -3,14 +3,17 @@
 
 
 
-void TextRPGProject::GameUpdateTextRPG()
+
+ void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C)
 {
    
     TextRPGProject Var;
 
-    std::cout << "Text RPG Project" << std::endl;
-    std::cout << "Please press enter" << std::endl;
-    std::cin >> Var.GameSelectionTextRPG;
+
+    SetConsoleTextAttribute(hConsole_C, 10);
+    cout << setw(55) << " " << Var.TextRPGName << endl;
+    cout << "Please press enter" << endl;
+    cin >> Var.GameSelectionTextRPG;
     system("cls");
     /* this is a demo of text RPG Tower levels or doungen doors path ways find you way out of the doungen to reach the next area can repeat same level need to make a mini map of player movement*/
            // menu screen
@@ -26,5 +29,5 @@ void TextRPGProject::GameUpdateTextRPG()
            // player stats
            // player armor set
     
-    
+    //warrior_P->playerstats->HP += 10.0f;
 }

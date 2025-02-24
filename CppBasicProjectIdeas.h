@@ -17,6 +17,6 @@ struct MyProjectVar
 	int Selection_P = 0;
 	string MainMenuName = { "CPP Projects" };
 	int startpoint = 0;
-
+	bool PlayerEnterSelected = false;
 };
 
