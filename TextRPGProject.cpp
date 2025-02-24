@@ -4,14 +4,18 @@
 
 
 
- void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C)
+
+void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C)
 {
-   
+
     TextRPGProject Var;
 
 
     SetConsoleTextAttribute(hConsole_C, 10);
     cout << setw(55) << " " << Var.TextRPGName << endl;
+    BottomSpace(10);
+    cout << setw(10) << " " << "1.) Start New Game" << endl;
+    BottomSpace(10);
     cout << "Please press enter" << endl;
     cin >> Var.GameSelectionTextRPG;
     system("cls");

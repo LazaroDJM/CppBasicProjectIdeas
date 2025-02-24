@@ -11,14 +11,8 @@ TextRPGProject Mode;
 
 using namespace std;
 #include"CppBasicProjectIdeas.h"
+#include"StringFunctions.h"
 
-static void BottomSpace(int HowManySpaces)
-{
-    for (int S = 0; S < HowManySpaces; S++)
-    {
-        cout << " " << endl;
-    }
-}
 
 
 

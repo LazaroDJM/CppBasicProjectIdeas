@@ -35,5 +35,8 @@
     <ClInclude Include="DefinesHeader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="StringFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

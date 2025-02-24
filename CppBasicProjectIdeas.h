@@ -1,15 +1,5 @@
 #pragma once
 
-
-
-
-
-
-
-
-
-
-
 struct MyProjectVar
 {
 	bool Applcation = false;

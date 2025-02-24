@@ -3,8 +3,9 @@
 #include"DefinesHeader.h"
 #include <iostream>
 #include<iomanip>
-using namespace std;
 
+using namespace std;
+#include "StringFunctions.h"
 class TextRPGProject
 {
 
@@ -32,7 +33,6 @@ private:
 	struct Warrior_P
 	{
 		PlayerStats* playerstats;
-
 
 	};
 	struct Mage_P
