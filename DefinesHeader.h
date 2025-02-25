@@ -1,4 +1,6 @@
 #pragma once
+
+//https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 // Vurail Keys
 #define VK_A 0X41
 #define VK_B 0X42
