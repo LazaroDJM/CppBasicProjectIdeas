@@ -3,11 +3,12 @@
 #include<string>
 #include"DefinesHeader.h"
 #include"TextRPGProject.cpp"
+#include"ConsoleColor.cpp"
 #include <iostream>
 #include<sstream>
 #include<iomanip>
 TextRPGProject Mode;
-
+ConsoleColor consoleColor;
 
 using namespace std;
 #include"CppBasicProjectIdeas.h"
@@ -104,7 +105,7 @@ int main()
     myProjectVar.WhichProject = Input_Numpad0;
    // setting a color text Handle
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-
+   
 
 
     while (myProjectVar.Applcation)
@@ -124,7 +125,7 @@ int main()
         {// TextRPGProject
             
            
-            Mode.GameUpdateTextRPG(hConsole);
+            Mode.GameUpdateTextRPG(hConsole, consoleColor);
             
             break;
         }

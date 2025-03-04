@@ -137,4 +137,19 @@ enum InputID
 
 };
 
+// color 
 
+enum ColorNames
+{
+	Black,
+	Blue,
+	Green,
+	Aqua,
+	Red,
+	Purple,
+	Yellow,
+	White,
+	Gray,
+	Light_Blue,
+	
+};

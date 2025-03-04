@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConsoleColor.cpp" />
     <ClCompile Include="CppBasicProjectIdeas.cpp" />
     <ClCompile Include="TextRPGProject.cpp" />
     <ClCompile Include="TypeDef.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleColor.h" />
     <ClInclude Include="CppBasicProjectIdeas.h" />
     <ClInclude Include="DefinesHeader.h" />
     <ClInclude Include="StringFunctions.h" />

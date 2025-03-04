@@ -5,17 +5,26 @@
 
 
 
-void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C)
+
+void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor)
 {
 
     TextRPGProject Var;
-
-
-    SetConsoleTextAttribute(hConsole_C, 10);
-    cout << setw(55) << " " << Var.TextRPGName << endl;
+ 
+    
+    
+    cout << setw(55) << " ";
+    consoleColor.SetText_BgConsoleColor(Green, Blue);
+    cout << Var.TextRPGName << endl;
+    consoleColor.SetText_BgConsoleColor(Green, Black);
     BottomSpace(10);
     cout << setw(10) << " " << "1.) Start New Game" << endl;
-    BottomSpace(10);
+    BottomSpace(2);
+    cout << setw(10) << " " << "2.) Lead Game" << endl;
+    BottomSpace(2);
+    cout << setw(10) << " " << "3.) Exit Game" << endl;
+    BottomSpace(2);
+    
     cout << "Please press enter" << endl;
     cin >> Var.GameSelectionTextRPG;
     system("cls");

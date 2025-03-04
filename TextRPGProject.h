@@ -7,6 +7,8 @@
 
 using namespace std;
 #include "StringFunctions.h"
+#include "ConsoleColor.h"
+
 class TextRPGProject
 {
 
@@ -14,7 +16,7 @@ class TextRPGProject
 public:
 	// can be change and updated any cpp or h file if needed.
 	// using inline for mulitple use location 
-	inline void GameUpdateTextRPG(HANDLE hConsole_C);
+	inline void GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor );
 	int GameSelectionTextRPG = 0;
 	string TextRPGName = "Text RPG Menu";
 private:
