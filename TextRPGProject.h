@@ -17,7 +17,8 @@ public:
 	// can be change and updated any cpp or h file if needed.
 	// using inline for mulitple use location 
 	inline void GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor );
-	int GameSelectionTextRPG = 0;
+	int GameSelectionTextRPG = 0, RestSelection = 8, WhichLevel = 1;
+	bool TextRPGGameOn = true;
 	string TextRPGName = "Text RPG Menu";
 private:
 	//can only be change thoght Cpp file only of same Class.
@@ -68,6 +69,16 @@ private:
 	Berserk_UP* berserk_UP = {};
 	Wizard_UP* wizard_UP = {};
 	Paladin_UP* paladin_UP = {};
+
+	enum PlayerClassName
+	{
+		Warrior,
+		Mage,
+		Knight,
+		Berserk,
+		Wizard,
+		Paladin,
+	};
 	enum PlayerWeaponNames
 	{
 	//       class , name ,  type 
@@ -123,12 +134,14 @@ private:
 		PlayerCharSelectionScreen,
 		StoreScreen,
 		Rest_AreaScreen,
-		DungeonScreen,
+		WidgetScreen,
 		MapScreen,
 		BattleModeScreen,
 		SittingsScreen,
 		PlayerInventoryScreen,
 		PlayerStatsScreen,
+		PlayerArmorSetScreen,
+		SaveGameScreen,
 
 
 		//player selection very basic warrior, mage and knight, upagraded berserk, wizard and paladin
@@ -145,11 +158,11 @@ private:
 	};
 	enum TextRPGLevels
 	{
-		D_Level_1,
-		D_Level_2,
-		D_Level_3,
-		D_Level_4,
-		D_Level_5Boss,
+		D_Level_1 = 1,
+		D_Level_2 = 2,
+		D_Level_3 = 3,
+		D_Level_4 = 4,
+		D_Level_5Boss = 5,
 	};
 	//enemy Information
 

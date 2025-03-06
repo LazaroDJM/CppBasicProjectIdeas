@@ -10,3 +10,6 @@ void ConsoleColor::SetText_BgConsoleColor(int TextColor, int BgColor)
 }
 
 
+
+
+

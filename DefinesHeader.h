@@ -47,6 +47,11 @@
 #define VK_Right 0x27
 #define VK_Down  0x28
 
+// Close Applaction
+
+#define VK_ESCAPE 0X18
+#define VK_END    0X23
+
 enum InputID
 {
 	Input_Undefined,
@@ -151,5 +156,21 @@ enum ColorNames
 	White,
 	Gray,
 	Light_Blue,
+	Bright_Green,
+	Bright_Aqua,
+	Bright_Red,
+	Bright_Purple,
+	Bright_Yellow,
+	Bright_White,
+	Bright_Gray,
+	Dark_Blue,
+	Dark_Green,
+	Dark_Aqua,
+	Dark_Red,
+	Dark_Purple,
+	Dark_Yellow,
+	Dark_White,
+	Dark_Gray,
+	
 	
 };

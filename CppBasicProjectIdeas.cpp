@@ -16,8 +16,7 @@ using namespace std;
 
 
 
-
-static MyProjectVar MainMenuDisplay(MyProjectVar myProjectvar, HANDLE hConsole_C)
+static MyProjectVar MainMenuDisplaySelection(MyProjectVar myProjectvar, HANDLE hConsole_C)
 {
     // need print selection to all project
 
@@ -52,6 +51,8 @@ static MyProjectVar MainMenuDisplay(MyProjectVar myProjectvar, HANDLE hConsole_C
     if (myProjectvar.Selection_P == 13 && myProjectvar.startpoint == 1)
     {// closing applation
         SetConsoleTextAttribute(hConsole_C, 12);
+        myProjectvar.WhichProject = VK_END;
+        myProjectvar.PlayerEnterSelected = true;
     }
     else if (myProjectvar.startpoint == 1)
     {
@@ -100,12 +101,13 @@ static MyProjectVar MainMenuDisplay(MyProjectVar myProjectvar, HANDLE hConsole_C
 
 int main()
 {
+   
     MyProjectVar myProjectVar;
     myProjectVar.Applcation = true;
     myProjectVar.WhichProject = Input_Numpad0;
-   // setting a color text Handle
+ 
+    // setting a color text Handle
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-   
 
 
     while (myProjectVar.Applcation)
@@ -115,7 +117,8 @@ int main()
         case VK_NUM0:
         {//Menu
 
-            myProjectVar = MainMenuDisplay(myProjectVar,hConsole);
+            myProjectVar = MainMenuDisplaySelection(myProjectVar,hConsole);
+
             system("cls");
           
             //myProjectVar.Applcation = false;
@@ -129,10 +132,23 @@ int main()
             
             break;
         }
-
+        case VK_ESCAPE:
+        {
+            // can be use with key ESC
+            // Close applation from any location
+            myProjectVar.Applcation = false;
+            break;
+        }
+        case VK_END:
+        {
+            // Can be use with Key END
+            // Close applation from any location
+            myProjectVar.Applcation = false;
+            break;
+        }
         default:
         {
-            // Close applation from any location
+           
             break;
         }
         }
