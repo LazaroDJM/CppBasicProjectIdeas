@@ -6,7 +6,7 @@
 
 
 
-void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor)
+void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor, KeyboardInput Input)
 {
 
     TextRPGProject Var;

@@ -55,87 +55,116 @@
 enum InputID
 {
 	Input_Undefined,
-	Input_0,
-	Input_Numpad0 = 0X30,
-	Input_1,
-	Input_Numpad1,
-	Input_2,
-	Input_Numpad2,
-	Input_3,
-	Input_Numpad3,
-	Input_4,
-	Input_Numpad4,
-	Input_5,
-	Input_Numpad5,
-	Input_6,
-	Input_Numpad6,
-	Input_7,
-	Input_Numpad7,
-	Input_8,
-	Input_Numpad8,
-	Input_9,
-	Input_Numpad9,
+	
+	Input_Numpad0 = 48,
+	
+	Input_Numpad1 = 49,
+	
+	Input_Numpad2 = 50,
+	
+	Input_Numpad3 = 51,
+	
+	Input_Numpad4 = 52,
+	
+	Input_Numpad5 = 53,
+	
+	Input_Numpad6 = 54,
+	
+	Input_Numpad7 = 55,
+	
+	Input_Numpad8 = 56,
+
+	Input_Numpad9 = 57,
 	//Letters Input Keys
-	Input_A = 0X41,
-	Input_B,
-	Input_C,
-	Input_D,
-	Input_E,
-	Input_F,
-	Input_G,
-	Input_H,
-	Input_I,
-	Input_J,
-	Input_K,
-	Input_L,
-	Input_M,
-	Input_N,
-	Input_O,
-	Input_P,
-	Input_Q,
-	Input_R,
-	Input_S,
-	Input_T,
-	Input_U,
-	Input_V,
-	Input_W,
-	Input_X,
-	Input_Y,
-	Input_Z,
-	// VK
+	Input_A = 97,
+	Input_B = 98,
+	Input_C = 99,
+	Input_D = 100,
+	Input_E = 101,
+	Input_F = 102,
+	Input_G = 103,
+	Input_H = 104,
+	Input_I = 105,
+	Input_J = 106,
+	Input_K = 107,
+	Input_L = 108,
+	Input_M = 109,
+	Input_N = 110,
+	Input_O = 111,
+	Input_P = 112,
+	Input_Q = 113,
+	Input_R = 114,
+	Input_S = 115,
+	Input_T = 116,
+	Input_U = 117,
+	Input_V = 118,
+	Input_W = 119,
+	Input_X = 120,
+	Input_Y = 121,
+	Input_Z = 122,
+	// Caps
+	InputCap_A = 65,
+	InputCap_B = 66,
+	InputCap_C = 67,
+	InputCap_D = 68,
+	InputCap_E = 69,
+	InputCap_F = 70,
+	InputCap_G = 71,
+	InputCap_H = 72,
+	InputCap_I = 73,
+	InputCap_J = 74,
+	InputCap_K = 75,
+	InputCap_L = 76,
+	InputCap_M = 77,
+	InputCap_N = 78,
+	InputCap_O = 79,
+	InputCap_P = 80,
+	InputCap_Q = 81,
+	InputCap_R = 82,
+	InputCap_S = 83,
+	InputCap_T = 84,
+	InputCap_U = 85,
+	InputCap_V = 86,
+	InputCap_W = 87,
+	InputCap_X = 88,
+	InputCap_Y = 89,
+	InputCap_Z = 90,
+	// Arrow Keys error 224
 
-	Input_ArrowUp = 0x26, // 38
-	Input_ArrowDown = 0x28, // 40
-	Input_ArrowLeft = 0x25, //37
-	Input_ArrowRight = 0x27, // 39
+	Input_ArrowUp = 80, // 38
+	Input_ArrowDown = 72, // 40
+	Input_ArrowLeft = 75, //37
+	Input_ArrowRight = 77, // 39
+	// F Keys Error 0
+	Input_F1 = 59,
+	Input_F2 = 60,
+	Input_F3 = 61,
+	Input_F4 = 62,
+	Input_F5 = 63,
+	Input_F6 = 64,
+	Input_F7 = 65,
+	Input_F8 = 66,
+	Input_F9 = 67,
+	Input_F10 = 68,
+	
+	Input_F12 = 134,
 
-	Input_F1,
-	Input_F2,
-	Input_F3,
-	Input_F4,
-	Input_F5,
-	Input_F6,
-	Input_F7,
-	Input_F8,
-	Input_F9,
-	Input_F10,
-	Input_F11,
-	Input_F12,
+	
+	Input_SpaceBar = 32,
+	Input_Enter = 13,
+	Input_Tab = 9,
+	
 
-	Input_BackSpace,
-	Input_SpaceBar,
-	Input_Enter,
-	Input_Tab,
-	Input_CapsLock,
-	Input_Shift,
-	Input_CTRL,
-	Input_ALT,
-
-	Input_MouseLeft,
-	Input_MouseRight,
+	
+	
+	Input_ESC = 27, 
+	Input_ShiftQuestionMark = 63,//?
+	Input_PlusSign = 43,
 
 
-	Input_Count,
+
+
+
 
 
 

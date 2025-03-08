@@ -4,11 +4,13 @@
 #include"DefinesHeader.h"
 #include"TextRPGProject.cpp"
 #include"ConsoleColor.cpp"
+#include"KeyboardInput.cpp"
 #include <iostream>
 #include<sstream>
 #include<iomanip>
 TextRPGProject Mode;
 ConsoleColor consoleColor;
+KeyboardInput Input;
 
 using namespace std;
 #include"CppBasicProjectIdeas.h"
@@ -25,15 +27,10 @@ static MyProjectVar MainMenuDisplaySelection(MyProjectVar myProjectvar, HANDLE h
    
   
     BottomSpace(10);
+    
 
-    if (myProjectvar.Selection_P == 13 && myProjectvar.startpoint == 0)
-    {// seletion project
-       
-        SetConsoleTextAttribute(hConsole_C,12);
-        myProjectvar.WhichProject = VK_NUM1;
-        myProjectvar.PlayerEnterSelected = true;
-    }
-    else if (myProjectvar.startpoint == 0)
+   
+    if (myProjectvar.startpoint == 0)
     {
         
         SetConsoleTextAttribute(hConsole_C, 11);
@@ -48,13 +45,8 @@ static MyProjectVar MainMenuDisplaySelection(MyProjectVar myProjectvar, HANDLE h
 
     BottomSpace(2);
 
-    if (myProjectvar.Selection_P == 13 && myProjectvar.startpoint == 1)
-    {// closing applation
-        SetConsoleTextAttribute(hConsole_C, 12);
-        myProjectvar.WhichProject = VK_END;
-        myProjectvar.PlayerEnterSelected = true;
-    }
-    else if (myProjectvar.startpoint == 1)
+    
+    if (myProjectvar.startpoint == 1)
     {
         SetConsoleTextAttribute(hConsole_C, 11);
     }
@@ -66,6 +58,40 @@ static MyProjectVar MainMenuDisplaySelection(MyProjectVar myProjectvar, HANDLE h
     cout << " " << endl;
 
     SetConsoleTextAttribute(hConsole_C, 15);
+    //player input
+    myProjectvar.Selection_P = Input.GetInput(myProjectvar.Selection_P);
+    if (Input.KeyPressed(Input_S,myProjectvar.Selection_P) != NULL)
+    {
+        if (myProjectvar.startpoint == 0)
+        {
+            myProjectvar.startpoint = 1;
+        }
+    }
+    if (Input.KeyPressed(Input_W, myProjectvar.Selection_P) != NULL)
+    {
+        if (myProjectvar.startpoint == 1)
+        {
+            myProjectvar.startpoint = 0;
+        }
+    }
+    if (Input.KeyPressed(Input_Enter, myProjectvar.Selection_P) != NULL)
+    {
+        if (myProjectvar.startpoint == 0)
+        {
+            myProjectvar.WhichProject = VK_NUM1;
+            myProjectvar.PlayerEnterSelected = true;
+        }
+        else if (myProjectvar.startpoint == 1)
+        {
+            myProjectvar.WhichProject = VK_END;
+            myProjectvar.PlayerEnterSelected = true;
+        }
+    }
+
+ 
+
+
+    /*
     if (myProjectvar.PlayerEnterSelected == NULL)
     {
         //system("pause");
@@ -91,7 +117,7 @@ static MyProjectVar MainMenuDisplaySelection(MyProjectVar myProjectvar, HANDLE h
         }
         myProjectvar.PlayerEnterSelected = false;
     }
-    
+   */
    
     return myProjectvar;
 }
@@ -108,7 +134,7 @@ int main()
  
     // setting a color text Handle
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-
+   
 
     while (myProjectVar.Applcation)
     {
@@ -116,9 +142,10 @@ int main()
         {
         case VK_NUM0:
         {//Menu
-
-            myProjectVar = MainMenuDisplaySelection(myProjectVar,hConsole);
-
+          
+           myProjectVar = MainMenuDisplaySelection(myProjectVar,hConsole);
+           
+         
             system("cls");
           
             //myProjectVar.Applcation = false;
@@ -128,7 +155,7 @@ int main()
         {// TextRPGProject
             
            
-            Mode.GameUpdateTextRPG(hConsole, consoleColor);
+            Mode.GameUpdateTextRPG(hConsole, consoleColor, Input);
             
             break;
         }
