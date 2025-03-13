@@ -18,7 +18,7 @@ class TextRPGProject
 public:
 	// can be change and updated any cpp or h file if needed.
 	// using inline for mulitple use location 
-	inline void GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor, KeyboardInput Input );
+	inline void GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor, KeyboardInput Input, MyProjectVar myProjectVar);
 	int GameSelectionTextRPG = 0, RestSelection = 8, WhichLevel = 1;
 	bool TextRPGGameOn = true;
 	string TextRPGName = "Text RPG Menu";

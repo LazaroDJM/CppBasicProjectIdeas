@@ -8,7 +8,7 @@
 #include <iostream>
 #include<sstream>
 #include<iomanip>
-TextRPGProject Mode;
+TextRPGProject TextRPG;
 ConsoleColor consoleColor;
 KeyboardInput Input;
 
@@ -155,7 +155,7 @@ int main()
         {// TextRPGProject
             
            
-            Mode.GameUpdateTextRPG(hConsole, consoleColor, Input);
+            TextRPG.GameUpdateTextRPG(hConsole, consoleColor, Input);
             
             break;
         }

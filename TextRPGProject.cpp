@@ -2,11 +2,31 @@
 #include "TextRPGProject.h"
 
 
+void MainMenuTextRPG(ConsoleColor Color, TextRPGProject Var, KeyboardInput Input)
+{
+
+    system("cls");
+    cout << setw(55) << " ";
+    Color.SetText_BgConsoleColor(Black, Blue);
+    cout << Var.TextRPGName << endl;
+    Color.SetText_BgConsoleColor(Green, Black);
+    BottomSpace(10);
+    cout << setw(10) << " " << "1.) Start New Game" << endl;
+    BottomSpace(2);
+    cout << setw(10) << " " << "2.) Lead Game" << endl;
+    BottomSpace(2);
+    cout << setw(10) << " " << "3.) Exit Game" << endl;
+    BottomSpace(2);
+   
+    //player input
+    myProjectvar.Selection_P = Input.GetInput(myProjectvar.Selection_P);
+
+    system("pause");
+}
 
 
 
-
-void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor, KeyboardInput Input)
+void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor, KeyboardInput Input,MyProjectVar,)
 {
 
     TextRPGProject Var;
@@ -27,21 +47,8 @@ void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleCol
         {
         case TextRPGMainMenu:
         {
-            system("cls");
-            cout << setw(55) << " ";
-            consoleColor.SetText_BgConsoleColor(Black, Blue);
-            cout << Var.TextRPGName << endl;
-            consoleColor.SetText_BgConsoleColor(Green, Black);
-            BottomSpace(10);
-            cout << setw(10) << " " << "1.) Start New Game" << endl;
-            BottomSpace(2);
-            cout << setw(10) << " " << "2.) Lead Game" << endl;
-            BottomSpace(2);
-            cout << setw(10) << " " << "3.) Exit Game" << endl;
-            BottomSpace(2);
-            cout << "Please press enter" << endl;
-            system("pause");
-           
+            MainMenuTextRPG(consoleColor, Var);
+
            
 
             break;
