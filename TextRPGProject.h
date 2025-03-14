@@ -18,10 +18,15 @@ class TextRPGProject
 public:
 	// can be change and updated any cpp or h file if needed.
 	// using inline for mulitple use location 
-	inline void GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor, KeyboardInput Input, MyProjectVar myProjectVar);
+	inline int GameUpdateTextRPG(HANDLE hConsole_C, ConsoleColor consoleColor, KeyboardInput Input);
 	int GameSelectionTextRPG = 0, RestSelection = 8, WhichLevel = 1;
-	bool TextRPGGameOn = true;
-	string TextRPGName = "Text RPG Menu";
+	bool TextRPGGameOn = true,PlayerEnterSelected = false;
+	string TextRPGWindowNames[15] = {"  Text RPG Menu  ", "  Charater Class Selection  ", "  Store  ", "  Home  ", "  Pause  ", "  Doungen  ", "  Battle Mode  ", "  Setting  ", "  Inventory  ", "  Stats  ", "  Armor Set  ", "  Save Game  "};
+	int Player_Seletion = 0, StartPoint = 0, WhichMode = 0, ExitGame = 0;
+
+
+
+
 private:
 	//can only be change thoght Cpp file only of same Class.
 	// each monster in each level will be determin defeted or alive in each time player still in the same area 

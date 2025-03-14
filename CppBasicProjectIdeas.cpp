@@ -155,7 +155,7 @@ int main()
         {// TextRPGProject
             
            
-            TextRPG.GameUpdateTextRPG(hConsole, consoleColor, Input);
+            myProjectVar.WhichProject = TextRPG.GameUpdateTextRPG(hConsole, consoleColor, Input);
             
             break;
         }

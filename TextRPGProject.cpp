@@ -1,39 +1,168 @@
 
+
 #include "TextRPGProject.h"
 
-
-void MainMenuTextRPG(ConsoleColor Color, TextRPGProject Var, KeyboardInput Input)
+static TextRPGProject CharSelection(ConsoleColor Color, TextRPGProject Var, KeyboardInput Input)
 {
+    // top char class seletion follow my detail of class mid screen showing all it values and a destrintion of the class and it attack 
+    /*   warroir   mage  ect
+                     hp
+                     attack
+                     def
+                     luk
+                     inventory size
+                     armor name and values
+                     ect.
+                     
+                     class Descrition*/
 
-    system("cls");
-    cout << setw(55) << " ";
-    Color.SetText_BgConsoleColor(Black, Blue);
-    cout << Var.TextRPGName << endl;
-    Color.SetText_BgConsoleColor(Green, Black);
+    Color.SetText_BgConsoleColor(White, Blue);
+    cout << setw(119) << " " << ends;
+    cout << " ";
+    Color.SetText_BgConsoleColor(White, Black);
+    cout << setw(45) << " ";
+    Color.SetText_BgConsoleColor(White, Blue);
+    cout << Var.TextRPGWindowNames[1] << ends;
+    Color.SetText_BgConsoleColor(White, Black);
     BottomSpace(10);
-    cout << setw(10) << " " << "1.) Start New Game" << endl;
+    cout << setw(10) << " ";
+
+
+
+    // need to delet when input system in place
+    system("pause");
+
+    return Var;
+}
+
+ static TextRPGProject MainMenuTextRPG(ConsoleColor Color, TextRPGProject Var, KeyboardInput Input)
+{
+    Color.SetText_BgConsoleColor(White, Blue);
+    cout << setw(119)<< " " << ends;
+    cout << " ";
+    Color.SetText_BgConsoleColor(White, Black);
+    cout << setw(54) << " ";
+    Color.SetText_BgConsoleColor(White, Blue);
+    cout << Var.TextRPGWindowNames[0] << ends;
+    Color.SetText_BgConsoleColor(White, Black);
+    BottomSpace(10);
+    cout << setw(10) << " ";
+
+    if (Var.StartPoint == 0)
+    {
+        Color.SetText_BgConsoleColor(White, Aqua);
+    }
+    else
+    {
+        Color.SetText_BgConsoleColor(White, Black);
+    }
+    cout << "1.) Start New Game";
+    Color.SetText_BgConsoleColor(Black, Black);
+    cout << endl;
     BottomSpace(2);
-    cout << setw(10) << " " << "2.) Lead Game" << endl;
+    cout << setw(10) << " ";
+    if (Var.StartPoint == 1)
+    {
+        Color.SetText_BgConsoleColor(White, Aqua);
+    }
+    else
+    {
+        Color.SetText_BgConsoleColor(White, Black);
+    }
+   
+    cout << "2.) Load Game";
+
+    Color.SetText_BgConsoleColor(Black, Black);
+
+    cout << endl; 
+   
     BottomSpace(2);
-    cout << setw(10) << " " << "3.) Exit Game" << endl;
+    cout << setw(10) << " ";
+    if (Var.StartPoint == 2)
+    {
+        Color.SetText_BgConsoleColor(White, Aqua);
+    }
+    else
+    {
+        Color.SetText_BgConsoleColor(White, Black);
+    }
+    
+    cout << "3.) Exit Game";
+    Color.SetText_BgConsoleColor(Black, Black);
+    cout << endl;
     BottomSpace(2);
+  
    
     //player input
-    myProjectvar.Selection_P = Input.GetInput(myProjectvar.Selection_P);
+    Var.Player_Seletion = Input.GetInput(Var.Player_Seletion);
+    
+    if (Input.KeyPressed(Input_W, Var.Player_Seletion) != NULL)
+    {
+        Var.StartPoint--;
+        if (Var.StartPoint < 0)
+        {
+            Var.StartPoint = 0;
+        }
+       
+    }
+    if (Input.KeyPressed(Input_S, Var.Player_Seletion) != NULL)
+    {
+        Var.StartPoint++;
+        if (Var.StartPoint > 2)
+        {
+            Var.StartPoint = 2;
+        }
+        
+        
+            
+        
+    }
+    if (Input.KeyPressed(Input_Enter, Var.Player_Seletion) != NULL)
+    {
+        switch (Var.StartPoint)
+        {
+        case 0:
+        {
+            Var.GameSelectionTextRPG = 1;
 
-    system("pause");
+            break;
+        }
+        case 1:
+        {
+            // load from savefiles store only 5 slots
+            // f open file pass values and countine last location with current values
+            
+
+            break;
+        }
+        case 2:
+        {
+            Var.GameSelectionTextRPG = 8;
+            break;
+        }
+        default:
+        {
+            break;
+        }
+
+        }
+    }
+   
+
+    
+    return Var;
 }
 
 
 
-void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor, KeyboardInput Input,MyProjectVar,)
+int TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor, KeyboardInput Input)
 {
 
     TextRPGProject Var;
     Warrior_P warrior_P1 = {};
    
    // Note:
-   // grid size Y = 29, x = 120 each charater
+   // grid size Y = 29, x = 119 each charater this can change when making a window and getting a fix values to a cont x,y
 
      /* this is a demo of text RPG Tower levels or doungen doors path ways 
         find you way out of the doungen to reach the next area can repeat same level 
@@ -47,14 +176,19 @@ void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleCol
         {
         case TextRPGMainMenu:
         {
-            MainMenuTextRPG(consoleColor, Var);
 
+            system("cls");
+            Var = MainMenuTextRPG(consoleColor, Var, Input);
+            
            
 
             break;
         }
         case PlayerCharSelectionScreen:
         {// player selection very basic warrior, mage and knight, upagraded berserk, wizard and paladin 
+
+            system("cls");
+            Var = CharSelection(consoleColor, Var, Input);
             break;
         }
         case StoreScreen:
@@ -79,9 +213,11 @@ void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleCol
                 break;
             }
             case SaveGameScreen:
-            {
-
-                break;
+            {// same data in file pick from 5 slots or overwrite exciting save file
+             // openf and same all var of the progression of the game pass all values to only save what nessary not everything in the textprojectvar
+                Var.TextRPGGameOn = false;
+                Var.ExitGame= VK_NUM0;
+               
             }
             default:
             {
@@ -152,12 +288,15 @@ void TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleCol
         }
         default:
         {
-            break;
+            Var.TextRPGGameOn = false;
+            Var.ExitGame = VK_NUM0;
+           
         }
         }
 
     }
-
+    system("cls");
+    return Var.ExitGame;
 
    
    /*notes: 
