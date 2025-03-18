@@ -15,22 +15,58 @@ static TextRPGProject CharSelection(ConsoleColor Color, TextRPGProject Var, Keyb
                      ect.
                      
                      class Descrition*/
+    if (Var.PlayerSelectedClass == NULL)
+    {
+        Color.SetText_BgConsoleColor(White, Blue);
+        cout << setw(119) << " " << ends;
+        cout << " ";
+        Color.SetText_BgConsoleColor(White, Black);
+        cout << setw(45) << " ";
+        Color.SetText_BgConsoleColor(White, Blue);
+        cout << Var.TextRPGWindowNames[1] << ends;
+        Color.SetText_BgConsoleColor(White, Black);
 
-    Color.SetText_BgConsoleColor(White, Blue);
-    cout << setw(119) << " " << ends;
-    cout << " ";
-    Color.SetText_BgConsoleColor(White, Black);
-    cout << setw(45) << " ";
-    Color.SetText_BgConsoleColor(White, Blue);
-    cout << Var.TextRPGWindowNames[1] << ends;
-    Color.SetText_BgConsoleColor(White, Black);
-    BottomSpace(10);
-    cout << setw(10) << " ";
+        cout << setw(10) << " ";
+        BottomSpace(4);
+        cout << setw(20) << " ";
+        Color.SetText_BgConsoleColor(White, Black);
+        // Tier 1 max level 25
+        cout << "Warrior";
+
+        cout << setw(15);
+
+        cout << "Mage";
+
+        cout << setw(15);
+
+        cout << "Knight";
+        // Tier 2 Max level 50
+        // reach lvl 20 unlock it upper class
+
+        cout << setw(15);
+
+        cout << "Berserk";
+
+        cout << setw(15);
+
+        cout << "Wizard";
+
+        cout << setw(15);
+
+        cout << "Paladin ";
 
 
+        cout << " " << ends;
+        BottomSpace(10);
+        // need to delet when input system in place
+        system("pause");
+    }
+    else if (Var.PlayerSelectedClass)
+    {
+        // selection game mode 
+        //easy, mid, hard, every hard unlock by completing hard mode
+    }
 
-    // need to delet when input system in place
-    system("pause");
 
     return Var;
 }

@@ -20,8 +20,8 @@ public:
 	// using inline for mulitple use location 
 	inline int GameUpdateTextRPG(HANDLE hConsole_C, ConsoleColor consoleColor, KeyboardInput Input);
 	int GameSelectionTextRPG = 0, RestSelection = 8, WhichLevel = 1;
-	bool TextRPGGameOn = true,PlayerEnterSelected = false;
-	string TextRPGWindowNames[15] = {"  Text RPG Menu  ", "  Charater Class Selection  ", "  Store  ", "  Home  ", "  Pause  ", "  Doungen  ", "  Battle Mode  ", "  Setting  ", "  Inventory  ", "  Stats  ", "  Armor Set  ", "  Save Game  "};
+	bool TextRPGGameOn = true,PlayerEnterSelected = false, PlayerSelectedClass = false;
+	string TextRPGWindowNames[15] = {"  Text RPG Menu  ", "  Charater Class Selection  ", "  Store  ", "  Home  ", "  Pause  ", "  Doungen  ", "  Battle Mode  ", "  Setting  ", "  Inventory  ", "  Stats  ", "  Armor Set  ", "  Save Game  ", "Game Mode"};
 	int Player_Seletion = 0, StartPoint = 0, WhichMode = 0, ExitGame = 0;
 
 
