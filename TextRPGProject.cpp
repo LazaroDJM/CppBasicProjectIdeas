@@ -2,8 +2,12 @@
 
 #include "TextRPGProject.h"
 
-static TextRPGProject CharSelection(ConsoleColor Color, TextRPGProject Var, KeyboardInput Input)
+
+
+static TextRPGProject CharSelection(ConsoleColor Color, TextRPGProject Var, KeyboardInput Input )
 {
+   
+
     // top char class seletion follow my detail of class mid screen showing all it values and a destrintion of the class and it attack 
     /*   warroir   mage  ect
                      hp
@@ -28,38 +32,288 @@ static TextRPGProject CharSelection(ConsoleColor Color, TextRPGProject Var, Keyb
 
         cout << setw(10) << " ";
         BottomSpace(4);
-        cout << setw(20) << " ";
+        cout << setw(10) << " ";
         Color.SetText_BgConsoleColor(White, Black);
         // Tier 1 max level 25
-        cout << "Warrior";
 
-        cout << setw(15);
+        if (Var.StartPoint == 0)
+        {
+            Color.SetText_BgConsoleColor(White, Aqua);
+        }
+        else
+        {
+            Color.SetText_BgConsoleColor(White, Black);
+        }
+
+        cout << "Warrior";
+        Color.SetText_BgConsoleColor(Black, Black);
+        cout << setw(12)<< " ";
+       
+        if (Var.StartPoint == 1)
+        {
+            Color.SetText_BgConsoleColor(White, Aqua);
+        }
+        else
+        {
+            Color.SetText_BgConsoleColor(White, Black);
+        }
 
         cout << "Mage";
+        Color.SetText_BgConsoleColor(Black, Black);
+        cout << setw(12) << " ";
+        
+        if (Var.StartPoint == 2)
+        {
+            Color.SetText_BgConsoleColor(White, Aqua);
+        }
+        else
+        {
+            Color.SetText_BgConsoleColor(White, Black);
+        }
 
-        cout << setw(15);
 
         cout << "Knight";
         // Tier 2 Max level 50
         // reach lvl 20 unlock it upper class
-
-        cout << setw(15);
+        Color.SetText_BgConsoleColor(Black, Black);
+        cout << setw(12) << " ";
+        
+        if (Var.StartPoint == 3)
+        {
+            Color.SetText_BgConsoleColor(White, Aqua);
+        }
+        else
+        {
+            Color.SetText_BgConsoleColor(White, Black);
+        }
 
         cout << "Berserk";
-
-        cout << setw(15);
+        Color.SetText_BgConsoleColor(Black, Black);
+        cout << setw(12) << " ";
+       
+        if (Var.StartPoint == 4)
+        {
+            Color.SetText_BgConsoleColor(White, Aqua);
+        }
+        else
+        {
+            Color.SetText_BgConsoleColor(White, Black);
+        }
 
         cout << "Wizard";
+        Color.SetText_BgConsoleColor(Black, Black);
+        cout << setw(12)<< " ";
+      
+        if (Var.StartPoint == 5)
+        {
+            Color.SetText_BgConsoleColor(White, Aqua);
+        }
+        else
+        {
+            Color.SetText_BgConsoleColor(White, Black);
+        }
 
-        cout << setw(15);
+        cout << "Paladin";
+        Color.SetText_BgConsoleColor(Black, Black);
+        cout << " " << ends;
+        BottomSpace(4);
+        cout << setw(20) << "";
+        
+        Color.SetText_BgConsoleColor(White, Black);
+       
+        switch (Var.StartPoint)
+        {
+        case TextRPGProject::PlayerClassName::Warrior:
 
-        cout << "Paladin ";
+           
+            for (int GridY = 0; GridY < 20; GridY++)
+            {
+                Color.SetText_BgConsoleColor(White, Aqua);
+                cout << "|";
+              
+                for (int GridX = 0; GridX < 80; GridX++)
+                {
+                    
+                    switch (GridY)
+                    {
+                    case 0:
+                    { Color.SetText_BgConsoleColor(White, Aqua);
+                        cout << "=";
+
+                        break;
+                    }
+
+                    case 19:
+                    {
+                        Color.SetText_BgConsoleColor(White, Aqua);
+                        cout << "=";
+
+                        break;
+                    }
+                    default:
+                    {
+                        Color.SetText_BgConsoleColor(Black, White);
+                        cout << " ";
+                        break;
+                    }
+                    }
+
+
+                }
+                Color.SetText_BgConsoleColor(Red, Aqua);
+                cout << "|" << endl;
+                Color.SetText_BgConsoleColor(White, Black);
+                cout << setw(20) << "";
+            }
+
+
+        {
+            break;
+        }
+        case TextRPGProject::PlayerClassName::Mage:
+        {
+            for (int GridY = 0; GridY < 20; GridY++)
+            {
+                Color.SetText_BgConsoleColor(White, Blue);
+                cout << "|";
+
+                for (int GridX = 0; GridX < 80; GridX++)
+                {
+
+                    switch (GridY)
+                    {
+                    case 0:
+                    { Color.SetText_BgConsoleColor(White,Blue);
+                    cout << "=";
+
+                    break;
+                    }
+
+                    case 19:
+                    {
+                        Color.SetText_BgConsoleColor(White,Blue);
+                        cout << "=";
+
+                        break;
+                    }
+                    default:
+                    {
+                        Color.SetText_BgConsoleColor(Black, White);
+                        cout << " ";
+                        break;
+                    }
+                    }
+
+
+                }
+                Color.SetText_BgConsoleColor(Red, Blue);
+                cout << "|" << endl;
+                Color.SetText_BgConsoleColor(White, Black);
+                cout << setw(20) << "";
+            }
+
+
+
+
+            break;
+        }
+        case TextRPGProject::PlayerClassName::Knight:
+        {
+
+
+            for (int GridY = 0; GridY < 20; GridY++)
+            {
+                Color.SetText_BgConsoleColor(White, Bright_White);
+                cout << "|";
+
+                for (int GridX = 0; GridX < 80; GridX++)
+                {
+
+                    switch (GridY)
+                    {
+                    case 0:
+                    { Color.SetText_BgConsoleColor(White, Bright_White);
+                    cout << "=";
+
+                    break;
+                    }
+
+                    case 19:
+                    {
+                        Color.SetText_BgConsoleColor(White, Bright_White);
+                        cout << "=";
+
+                        break;
+                    }
+                    default:
+                    {
+                        Color.SetText_BgConsoleColor(Black, White);
+                        cout << " ";
+                        break;
+                    }
+                    }
+
+
+                }
+                Color.SetText_BgConsoleColor(Red, Bright_White);
+                cout << "|" << endl;
+                Color.SetText_BgConsoleColor(White, Black);
+                cout << setw(20) << "";
+            }
+
+
+
+
+            break;
+        }
+        case TextRPGProject::PlayerClassName::Berserk:
+        {
+            break;
+        }
+        case TextRPGProject::PlayerClassName::Wizard:
+        {
+            break;
+        }
+        case TextRPGProject::PlayerClassName::Paladin:
+        {
+            break;
+        }
+        
+        default:
+        {
+            break;
+        }
+        }
+     
+        Var.Player_Seletion = Input.GetInput(Var.Player_Seletion);
+
+        if (Input.KeyPressed(Input_A, Var.Player_Seletion) != NULL)
+        {
+            Var.StartPoint--;
+            if (Var.StartPoint < 0)
+            {
+                Var.StartPoint = 0;
+            }
+
+        }
+        if (Input.KeyPressed(Input_D, Var.Player_Seletion) != NULL)
+        {
+            Var.StartPoint++;
+            if (Var.StartPoint > 5)
+            {
+                Var.StartPoint = 5;
+            }
+
+
+
+
+        }
 
 
         cout << " " << ends;
         BottomSpace(10);
         // need to delet when input system in place
-        system("pause");
+      
     }
     else if (Var.PlayerSelectedClass)
     {
@@ -182,6 +436,9 @@ static TextRPGProject CharSelection(ConsoleColor Color, TextRPGProject Var, Keyb
         }
 
         }
+
+        // reset Startpoint
+        Var.StartPoint = 0;
     }
    
 
@@ -191,12 +448,15 @@ static TextRPGProject CharSelection(ConsoleColor Color, TextRPGProject Var, Keyb
 
 
 
-int TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColor, KeyboardInput Input)
-{
+ int TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C, ConsoleColor consoleColor, KeyboardInput Input)
+ {
 
-    TextRPGProject Var;
-    Warrior_P warrior_P1 = {};
-   
+     TextRPGProject Var;
+     Warrior_P warrior_P1 = {};
+     
+     
+    
+    
    // Note:
    // grid size Y = 29, x = 119 each charater this can change when making a window and getting a fix values to a cont x,y
 
@@ -225,6 +485,7 @@ int TextRPGProject::GameUpdateTextRPG(HANDLE hConsole_C,ConsoleColor consoleColo
 
             system("cls");
             Var = CharSelection(consoleColor, Var, Input);
+           
             break;
         }
         case StoreScreen:

@@ -25,6 +25,16 @@ public:
 	int Player_Seletion = 0, StartPoint = 0, WhichMode = 0, ExitGame = 0;
 
 
+	enum PlayerClassName
+	{
+		Warrior,
+		Mage,
+		Knight,
+		Berserk,
+		Wizard,
+		Paladin,
+	};
+	
 
 
 private:
@@ -77,15 +87,7 @@ private:
 	Wizard_UP* wizard_UP = {};
 	Paladin_UP* paladin_UP = {};
 
-	enum PlayerClassName
-	{
-		Warrior,
-		Mage,
-		Knight,
-		Berserk,
-		Wizard,
-		Paladin,
-	};
+	
 	enum PlayerWeaponNames
 	{
 	//       class , name ,  type 
